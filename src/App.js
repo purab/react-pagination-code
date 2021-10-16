@@ -39,13 +39,13 @@ function App() {
               }
             )
   }
-  const displayUsers = posts
+  const displayPosts = posts
     .slice(pagesVisited, pagesVisited + postsPerPage)
-    .map((user) => {
+    .map((post) => {
       return (
-        <div className="post" key={user.id}>
-          <p>{user.id}</p>
-          <p>{user.title}</p>          
+        <div className="post" key={post.id}>
+          <p>{post.id}</p>
+          <p>{post.title}</p>          
         </div>
       );
     });
@@ -70,7 +70,7 @@ function App() {
   } else {
     return (
       <div className="App">
-        {displayUsers}
+        {displayPosts}
         <ReactPaginate
           previousLabel={"Previous"}
           nextLabel={"Next"}
